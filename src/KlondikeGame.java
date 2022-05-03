@@ -7,7 +7,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-
+/** for simplicity's sake i'm keeping it as Klondike Game but it's Napolean */
 public class KlondikeGame {
 	//#region vars
 	public static final int DELAY_INTERVAL = 50, INIT_W = 1000, INIT_H = 800;
