@@ -5,8 +5,8 @@ public class Player {
 
 	public Player(String s){
     this.name = s;
-		toPlay = new PlayerPile();
-		capturedCards = new PlayerPile();
+		toPlay = new Pile(); // player's cards
+		capturedCards = new Pile(); // royalties captured
 	}
 
   public String getName() {
@@ -15,20 +15,22 @@ public class Player {
 
 	/** Don't need to change this*/
 	public Card getCard(){
-		if(toPlay.size()<=0){
-			if(capturedCards.size()<=0)
-				return null;
-			else{
-				// line below just randomizes the captured
-				// cards so that we don't get cyclic results where
-				// the game never ends
-				capturedCards.shuffle();
-				while(capturedCards.size()>0)
-					toPlay.add(capturedCards.deal());
-			}
+		// make sure there's a card to play
+		if(toPlay.size()<=0) {
+			return null; 
 		}
-		return toPlay.deal();
+		// let player pick card
+		return pick();
 	}
+
+	private Card pick() {
+		// show cards
+		for (Card c: toPlay) {
+
+		}
+		return null;
+	}
+
 	public void addCard(Card c){
 		capturedCards.add(c);
 	}
