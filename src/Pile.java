@@ -6,12 +6,25 @@
  * be implemented here.  Updateable may have empty implementation.
  * You WILL write subclasses of Pile
  */
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
 import java.util.*;
 
-public abstract class Pile implements Drawable, Updateable{
+public class Pile implements Drawable, Updateable{
   
   private ArrayList<Card> pile = new ArrayList<>();
+  private int x;
+  private int y;
 
+  public Pile(int x, int y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  public Pile() {
+    x = 0; 
+    y = 0;
+  }
 	// returns the number of Cards left in the Pile
 	public int size(){
     return pile.size();
@@ -91,4 +104,16 @@ public abstract class Pile implements Drawable, Updateable{
     }
 		return s;
 	}
+
+  @Override
+  public void update(ActionEvent a) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void draw(Graphics g) {
+    // TODO Auto-generated method stub
+    
+  }
 }
