@@ -1,6 +1,6 @@
 public class Player {
 	private Pile toPlay;// This is the Pile of Cards that I will play
-  private Pile capturedCards;// Pile of cards that I have won
+  	private Pile capturedCards;// Pile of cards that I have won
 	private String name;// This player's name
 
 	public Player(String s){
@@ -9,9 +9,9 @@ public class Player {
 		capturedCards = new Pile(); // royalties captured
 	}
 
-  public String getName() {
-    return name;
-  }
+  	public String getName() {
+    	return name;
+  	}
 
 	/** Don't need to change this*/
 	public Card getCard(){
@@ -25,24 +25,25 @@ public class Player {
 
 	private Card pick() {
 		// show cards
-		for (Card c: toPlay) {
+	//	for (Card c: toPlay) {
 
-		}
+	//	}
 		return null;
 	}
 
 	public void addCard(Card c){
 		capturedCards.add(c);
 	}
-  public void add(Pile p){
-    while (p.size() > 0) {
-      addCard(p.deal());
-    }
-  }
-  // leave the method below alone
-  public int cardsLeft(){
-    return capturedCards.size()+toPlay.size();
-  }
+  	public void add(Pile p){
+    	while (p.size() > 0) {
+      		addCard(p.deal());
+    	}
+  	}
+
+	// leave the method below alone
+	public int cardsLeft(){
+		return capturedCards.size()+toPlay.size();
+	}
 
    	
 }

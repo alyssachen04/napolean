@@ -14,10 +14,7 @@ public class GameBoard implements Drawable, Updateable {
 	Image testImage, backImage;
 	public static final int OFFSET_X = 40, OFFSET_Y = 20;
 	
-	 
 	private int numdraws=0;
-	
-	
 	
 	public GameBoard() {
 		try {
