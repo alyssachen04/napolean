@@ -8,19 +8,21 @@ public class Deck extends Pile{
 
 // no new list because all Piles have a list so new list = second list
 
-  public Deck(){
+  public Deck(){ //makes deck
 		initDeck();
 	}
 
 	/* Initializes the Cards in this deck, constructing them all and
 	 *  placing them into the data structure holding them.*/			
-	private void initDeck() {
-    for (int i = 0; i < 4; i++) {
-      for (int j = 2; j < 15; j++) {
+	private void initDeck() { 
+    for (int i = 0; i < 4; i++) { //suit
+      for (int j = 2; j < 15; j++) { //value
         Card c = new Card(i,j);
         add(c);
-      }
+      } //big list of cards done
     }
+    Card j = new Card(5, 1);
+    add(j);
   }
 
     @Override

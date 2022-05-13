@@ -1,25 +1,25 @@
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
-//test test testttt
+
 /** represents a playing card that can draw itself. */
 public class Card implements Drawable, Updateable, Comparable<Card> {
     // need some instance variables
       private int suit;
       private int value;
     
-     /** Must have this constructor.  You can add others*/
-        public Card(int suit, int value){
+        public Card(int suit, int value){ //constructor to make a card consists of its suit and value
         this.suit = suit;
         this.value = value;
         }
         
       // add getters
-      public String getSuit() {
+      public String getSuit() { //if suit is a given case, return its string name
         switch (suit) {
           case 1: return "Diamonds";
           case 2: return "Hearts"; 
           case 3: return "Spades";
-          default: return "Clubs";
+          case 4: return "Clubs";
+          default: return "Joker"; // j1; anything else is joker
         }
       }
       // could also use an array and use index to get a suit
@@ -47,10 +47,6 @@ public class Card implements Drawable, Updateable, Comparable<Card> {
         return answer;
         }
         
-        // represents this Card in the following manner
-        // if the card is the Ace of Spades, then 
-        // it returns "Ace of Spades". 2 - 10 can be represented
-        // as "2 of Hearts" or "Two of Hearts".  Your choice.
         @Override
         public String toString(){
             String s = "";
