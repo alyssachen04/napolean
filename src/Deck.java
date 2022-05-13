@@ -20,7 +20,9 @@ public class Deck extends Pile{
         Card c = new Card(i,j);
         add(c);
       }
-    }
+    } 
+    Card j = new Card(5,1);
+    add(j);
   }
 
     @Override

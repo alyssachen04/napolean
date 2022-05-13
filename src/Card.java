@@ -19,7 +19,8 @@ public class Card implements Drawable, Updateable, Comparable<Card> {
           case 1: return "Diamonds";
           case 2: return "Hearts"; 
           case 3: return "Spades";
-          default: return "Clubs";
+          case 4: return "Clubs";
+          default: return "Joker";
         }
       }
       // could also use an array and use index to get a suit
