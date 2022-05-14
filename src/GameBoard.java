@@ -21,9 +21,16 @@ public class GameBoard implements Drawable, Updateable {
 	private Player four = new Player("Mr. Hanson");
 	private Player five = new Player("McKenna");
 
+	public ArrayList <Player> playerList = new ArrayList <> ();
+
 	private int numdraws=0;
 	
 	public GameBoard() {
+		playerList.add(one);
+		playerList.add(two);
+		playerList.add(three);
+		playerList.add(four);
+		playerList.add(five);
 		try {
 			testImage = ImageIO.read(new File("images/cards/dj.png"));
 			backImage = ImageIO.read(new File("images/cards/b1fv.png"));
