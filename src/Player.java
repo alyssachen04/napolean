@@ -4,7 +4,7 @@ public class Player {
 	private String name;// This player's name
 
 	public Player(String s){
-    this.name = s;
+    	this.name = s;
 		toPlay = new Pile(); // player's cards
 		capturedCards = new Pile(); // royalties captured
 	}

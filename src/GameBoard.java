@@ -9,11 +9,18 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 public class GameBoard implements Drawable, Updateable {
-	
 
 	Image testImage, backImage;
 	public static final int OFFSET_X = 40, OFFSET_Y = 20;
-	
+	 
+	// private int numdraws = 0;
+	private Deck deck = new Deck();
+	private Player one = new Player("Sahana");
+	private Player two = new Player("Alyssa");
+	private Player three = new Player("Sarah");
+	private Player four = new Player("Mr. Hanson");
+	private Player five = new Player("McKenna");
+
 	private int numdraws=0;
 	
 	public GameBoard() {
