@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Player {
 	private Pile toPlay;// This is the Pile of Cards that I will play
   	private Pile capturedCards;// Pile of cards that I have won
@@ -22,7 +24,7 @@ public class Player {
 		// let player pick card
 		return pick();
 	}
-
+	
 	private Card pick() {
 		// show cards
 	//	for (Card c: toPlay) {
