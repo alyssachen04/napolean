@@ -22,7 +22,7 @@ public class GameBoard implements Drawable, Updateable {
 	private Player five = new Player("McKenna");	
 	public ArrayList <Player> playerList = new ArrayList <> ();
 
-	private int numdraws=0;
+	private int numdraws = 0;
 	
 	public GameBoard() {
 		playerList.add(one);
@@ -79,6 +79,12 @@ public class GameBoard implements Drawable, Updateable {
 	
 	public void round() {
 
+	}
+
+	public void dealDeck() {
+		for (int i = 0; i < 10; i++) {
+			// one.toPlay.add(deck.deal());
+		}
 	}
 
 	@Override
