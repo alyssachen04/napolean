@@ -22,7 +22,7 @@ public class GameBoard implements Drawable, Updateable {
 	private Player five = new Player("McKenna");	
 	private Pile middle = new Pile();
 	public ArrayList <Player> playerList = new ArrayList <> ();
-	private int bid = 0;
+	private int bid = 0; // number napoleon + secretary need to win; compare NAPOLEON.captured + SECRETARY.captured to this later to figure out who wins 
 	private int napolean = 0; 
 	// private Player nPlayer;
 
@@ -40,7 +40,6 @@ public class GameBoard implements Drawable, Updateable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 		/* int check = 0;
 		do { 
 			dealDeck();
@@ -48,7 +47,7 @@ public class GameBoard implements Drawable, Updateable {
 		while(check != -1);
 			
 		bid = bid();
-		// switchCenter();
+		switchCenter(playerList.get(napolean), middle);
 
 		for (int i = 0; i < 10; i++) {
 			// round();
@@ -121,6 +120,14 @@ public class GameBoard implements Drawable, Updateable {
 			five.toPlay.add(deck.deal());
 		}
 		middle.addPile(deck);
+	}
+
+	public void switchCenter(Player Napoleon, Pile middle) {
+		// show middle and napoleon cards
+		// click one, highlight
+		// click two, swap
+		// make a done button
+		// when done, 
 	}
 
 	public int bid() {

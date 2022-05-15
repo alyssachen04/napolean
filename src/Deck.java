@@ -21,7 +21,7 @@ public class Deck extends Pile{
         add(c);
       } //big list of cards done
     }
-    Card j = new Card(5, 1); //add the joker to the deck
+    Card j = new Card(5, 15); //add the joker to the deck
     add(j);
   }
 
