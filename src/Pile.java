@@ -34,6 +34,15 @@ public class Pile implements Drawable, Updateable{
     pile.clear();
   }
 
+  public Card getCard(int x){
+    if(pile.size()!=0){
+      return pile.get(x);
+    }
+    else{
+      return null;
+    }
+  }
+
  	/** Randomizes the cards in this deck. 
 	* You MUST use the following algorithm:
 	* If the size is < 2, return;

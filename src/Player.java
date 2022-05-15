@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Player {
-	private Pile toPlay;// This is the Pile of Cards that I will play
+	Pile toPlay;// This is the Pile of Cards that I will play
   	private Pile capturedCards;// Pile of cards that I have won
 	private String name;// This player's name
 
