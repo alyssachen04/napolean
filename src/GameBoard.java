@@ -24,6 +24,7 @@ public class GameBoard implements Drawable, Updateable {
 	public ArrayList <Player> playerList = new ArrayList <> ();
 	private int bid = 0;
 	private int napolean = 0; 
+	// private Player nPlayer;
 
 	private int numdraws = 0;
 	
@@ -40,22 +41,20 @@ public class GameBoard implements Drawable, Updateable {
 			e.printStackTrace();
 		}
 
-		int check = 0;
+		/* int check = 0;
 		do { 
 			dealDeck();
 			check = checkRoyal();
 		while(check != -1);
 			
 		bid = bid();
-		// bid();
-			
 		// switchCenter();
 
 		for (int i = 0; i < 10; i++) {
 			// round();
 		}
 
-		//gameOver();
+		//gameOver(); */
 		
 	}
 
