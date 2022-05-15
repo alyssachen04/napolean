@@ -22,6 +22,8 @@ public class GameBoard implements Drawable, Updateable {
 	private Player five = new Player("McKenna");	
 	private Pile middle = new Pile();
 	public ArrayList <Player> playerList = new ArrayList <> ();
+	private int bid = 0;
+	private int napolean = 0; 
 
 	private int numdraws = 0;
 	
@@ -44,6 +46,7 @@ public class GameBoard implements Drawable, Updateable {
 			check = checkRoyal();
 		while(check != -1);
 			
+		bid = bid();
 		// bid();
 			
 		// switchCenter();
@@ -119,6 +122,54 @@ public class GameBoard implements Drawable, Updateable {
 			five.toPlay.add(deck.deal());
 		}
 		middle.addPile(deck);
+	}
+
+	public int bid() {
+		boolean oneTrue = true;
+		boolean twoTrue = true;
+		boolean threeTrue = true;
+		boolean fourTrue = true;
+		boolean fiveTrue = true;
+		int currentBid = 9;
+		int winningPlayer = 0;
+		while (currentBid < 16 /* how many true */ ) {
+			if (oneTrue) { 
+				oneTrue = one.increaseBid(); 
+				if (oneTrue) {
+					currentBid = currentBid++;
+					winningPlayer = 1;
+				}
+			}
+			if (twoTrue) { 
+				twoTrue = one.increaseBid(); 
+				if (twoTrue) {
+					currentBid = currentBid++;
+					winningPlayer = 2;
+				}
+			}
+			if (threeTrue) { 
+				threeTrue = one.increaseBid(); 
+				if (threeTrue) {
+					currentBid = currentBid++;
+					winningPlayer = 3;
+				}
+			}
+			if (fourTrue) { 
+				fourTrue = one.increaseBid(); 
+				if (fourTrue) {
+					currentBid = currentBid++;
+					winningPlayer = 4;
+				}
+			}
+			if (fiveTrue) { 
+				fiveTrue = one.increaseBid(); 
+				if (fiveTrue) {
+					currentBid = currentBid++;
+					winningPlayer = 5;
+				}
+			}
+		}
+		return currentBid;
 	}
 
 	@Override

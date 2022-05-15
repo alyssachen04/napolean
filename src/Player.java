@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Player {
 	Pile toPlay;// This is the Pile of Cards that I will play
@@ -14,6 +15,17 @@ public class Player {
   	public String getName() {
     	return name;
   	}
+
+	public boolean increaseBid() {
+		System.out.println("Would you like to bid? Enter 0 for yes and 1 for no");
+		Scanner in = new Scanner(System.in);
+        int a = in.nextInt();
+        System.out.println("You entered integer " + a);
+		if (a == 0) {
+			return true;
+		}
+		return false;
+	}
 
 	/** Don't need to change this*/
 	public Card getCard(){
