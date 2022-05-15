@@ -169,6 +169,7 @@ public class GameBoard implements Drawable, Updateable {
 				}
 			}
 		}
+		napolean = winningPlayer;
 		return currentBid;
 	}
 
