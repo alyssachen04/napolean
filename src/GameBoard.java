@@ -56,11 +56,11 @@ public class GameBoard implements Drawable, Updateable {
 			for(int x = 0; x < playerList.get(i).toPlay.size(); x++){
 				if(playerList.get(i).toPlay.getCard(x).getValue() >= 11){
 					count++;
-					//break;
+					break;
 				}
 			}
 			if(count == 0){
-				//deal();
+				//dealDeck();
 			}
 		}
 	}
