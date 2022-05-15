@@ -49,6 +49,21 @@ public class GameBoard implements Drawable, Updateable {
 		
 	}
 
+	public void checkRoyal(){
+		for(int i = 0; i<playerList.size(); i++){
+			int count = 0;
+			for(int x = 0; x < playerList.get(i).toPlay.size(); x++){
+				if(playerList.get(i).toPlay.getCard(x).getValue() >= 11){
+					count++;
+					//break;
+				}
+			}
+			if(count == 0){
+				//deal();
+			}
+		}
+	}
+
 
 	/** @param g Graphics context onto which all Objects in the game
 	 * draw themselves.  This should NOT change the Objects
