@@ -43,7 +43,9 @@ public class GameBoard implements Drawable, Updateable {
 			dealDeck();
 			check = checkRoyal();
 		while(check != -1);
-			// bid();
+			
+		// bid();
+			
 		// switchCenter();
 
 		for (int i = 0; i < 10; i++) {
@@ -55,7 +57,7 @@ public class GameBoard implements Drawable, Updateable {
 	}
 
 	public int checkRoyal(){
-		for(int i = 0; i<playerList.size(); i++){
+		for(int i = 0; i < playerList.size(); i++){
 			int count = 0;
 			for(int x = 0; x < playerList.get(i).toPlay.size(); x++){
 				if(playerList.get(i).toPlay.getCard(x).getValue() >= 11){
@@ -64,10 +66,16 @@ public class GameBoard implements Drawable, Updateable {
 				}
 			}
 			if(count == 0){
+				deck = new Deck();
+				one.toPlay.clear();
+				two.toPlay.clear();
+				three.toPlay.clear();
+				four.toPlay.clear();
+				five.toPlay.clear();
 				return count;
 			}
 		}
-		return -1;
+		return -1; // all have royalties 
 	}
 
 
