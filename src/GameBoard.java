@@ -20,6 +20,7 @@ public class GameBoard implements Drawable, Updateable {
 	private Player three = new Player("Sarah");
 	private Player four = new Player("Mr. Hanson");
 	private Player five = new Player("McKenna");	
+	private Pile middle = new Pile();
 	public ArrayList <Player> playerList = new ArrayList <> ();
 
 	private int numdraws = 0;
@@ -98,8 +99,13 @@ public class GameBoard implements Drawable, Updateable {
 
 	public void dealDeck() {
 		for (int i = 0; i < 10; i++) {
-			// one.toPlay.add(deck.deal());
+			one.toPlay.add(deck.deal());
+			two.toPlay.add(deck.deal());
+			three.toPlay.add(deck.deal());
+			four.toPlay.add(deck.deal());
+			five.toPlay.add(deck.deal());
 		}
+		middle.addPile(deck);
 	}
 
 	@Override
