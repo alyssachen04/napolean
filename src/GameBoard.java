@@ -19,8 +19,7 @@ public class GameBoard implements Drawable, Updateable {
 	private Player two = new Player("Alyssa");
 	private Player three = new Player("Sarah");
 	private Player four = new Player("Mr. Hanson");
-	private Player five = new Player("McKenna");
-
+	private Player five = new Player("McKenna");	
 	private int numdraws=0;
 	
 	public GameBoard() {
@@ -30,6 +29,16 @@ public class GameBoard implements Drawable, Updateable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
+		// deal();
+		// bid();
+		// switchCenter();
+
+		for (int i = 0; i < 10; i++) {
+			// round();
+		}
+
+		//gameOver();
 		
 	}
 
@@ -58,6 +67,10 @@ public class GameBoard implements Drawable, Updateable {
 	public void justClicked(MouseEvent me) {
 		Point p = me.getPoint();
 		System.out.println("You just clicked "+p);
+	}
+	
+	public void round() {
+
 	}
 
 	@Override
