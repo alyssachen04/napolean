@@ -38,8 +38,12 @@ public class GameBoard implements Drawable, Updateable {
 			e.printStackTrace();
 		}
 
-		// deal();
-		// bid();
+		int check = 0;
+		do { 
+			dealDeck();
+			check = checkRoyal();
+		while(check != -1);
+			// bid();
 		// switchCenter();
 
 		for (int i = 0; i < 10; i++) {
