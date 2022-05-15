@@ -132,7 +132,7 @@ public class GameBoard implements Drawable, Updateable {
 		boolean fiveTrue = true;
 		int currentBid = 9;
 		int winningPlayer = 0;
-		while (currentBid < 16 /* how many true */ ) {
+		while (currentBid < 16 && howManyTrue(oneTrue, twoTrue, threeTrue, fourTrue, fiveTrue)) {
 			if (oneTrue) { 
 				oneTrue = one.increaseBid(); 
 				if (oneTrue) {
@@ -170,6 +170,26 @@ public class GameBoard implements Drawable, Updateable {
 			}
 		}
 		return currentBid;
+	}
+
+	private boolean howManyTrue(boolean one, boolean two, boolean three, boolean four, boolean five) {
+		int count = 0;
+		if (one) {
+			count++;
+		}
+		if (two) {
+			count++;
+		}
+		if (three) {
+			count++;
+		}
+		if (four) {
+			count++;
+		}
+		if (five) {
+			count++;
+		}
+		return (count != 1);
 	}
 
 	@Override
