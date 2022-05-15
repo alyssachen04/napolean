@@ -49,6 +49,13 @@ public class GameBoard implements Drawable, Updateable {
 		
 	}
 
+	// public void checkRoyalty{
+	// 	for(int i = 0; i<playerList.size(); i++){
+	// 		for(int x = 0; x < )
+	// 	}
+	// }
+
+
 	/** @param g Graphics context onto which all Objects in the game
 	 * draw themselves.  This should NOT change the Objects
 	 */
