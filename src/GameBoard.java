@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 public class GameBoard implements Drawable, Updateable {
 
 	Image testImage, backImage;
-	public static final int OFFSET_X = 40, OFFSET_Y = 20;
+	public static final int OFFSET_X = 40, OFFSET_Y = 40;
 	 
 	// private int numdraws = 0;
 	private Deck deck = new Deck();
