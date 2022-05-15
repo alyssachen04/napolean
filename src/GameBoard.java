@@ -54,7 +54,7 @@ public class GameBoard implements Drawable, Updateable {
 		
 	}
 
-	public void checkRoyal(){
+	public int checkRoyal(){
 		for(int i = 0; i<playerList.size(); i++){
 			int count = 0;
 			for(int x = 0; x < playerList.get(i).toPlay.size(); x++){
@@ -64,9 +64,10 @@ public class GameBoard implements Drawable, Updateable {
 				}
 			}
 			if(count == 0){
-				//dealDeck();
+				return count;
 			}
 		}
+		return -1;
 	}
 
 
