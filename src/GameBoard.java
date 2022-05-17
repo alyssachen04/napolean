@@ -123,11 +123,22 @@ public class GameBoard implements Drawable, Updateable {
 	}
 
 	public void switchCenter(Player Napoleon, Pile middle) {
-		// show middle and napoleon cards
-		// click one, highlight
-		// click two, swap
-		// make a done button
-		// when done, 
+		/*
+		show middle and napoleon cards
+		click one, highlight
+		click two, swap
+		make a done button
+		when done, 
+
+		middle and napolean
+		*/
+		int pick = 0; 
+		int swap = 0;
+		Card c = middle.getCard(pick);
+		middle.remove(pick);
+		Napoleon.toPlay.add(c);
+		Napoleon.toPlay.remove(swap);
+		middle.add(c);
 	}
 
 	public int bid() {
