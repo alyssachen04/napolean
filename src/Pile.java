@@ -101,6 +101,10 @@ public class Pile implements Drawable, Updateable{
     pile.add(c);
 	}
 
+  public void remove(int x) {
+    pile.remove(x);
+  }
+
 	/** This returns a String representation of this Pile.  It should return a String built out of the Cards that the pile contains
 	*/
 
