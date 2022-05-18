@@ -12,7 +12,9 @@ public class GameBoard implements Drawable, Updateable {
 
 	Image testImage, backImage;
 	public static final int OFFSET_X = 40, OFFSET_Y = 40;
-	 
+	
+	Image napoleanLogo;
+
 	// private int numdraws = 0;
 	private Deck deck = new Deck();
 	private Player one = new Player("Sahana");
@@ -37,6 +39,7 @@ public class GameBoard implements Drawable, Updateable {
 		try {
 			testImage = ImageIO.read(new File("images/cards/dj.png"));
 			backImage = ImageIO.read(new File("images/cards/b1fv.png"));
+			napoleanLogo = ImageIO.read(new File("images/napolean_logo.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -85,7 +88,7 @@ public class GameBoard implements Drawable, Updateable {
 	 */
 	public void draw(Graphics g) {
 		numdraws++;
-		g.setColor(new Color(40, 155, 70));
+		g.setColor(new Color(60, 200, 150));
 		g.fillRect(0, 0, 3000, 2000);
 		
 		// this is just to test drawing a card

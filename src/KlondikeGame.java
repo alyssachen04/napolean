@@ -13,7 +13,7 @@ public class KlondikeGame {
 	public static final int width = 50;
 	public static final int height = 78;
 	public static final double gap = width*0.4; //20 in this case
-	public static final int DELAY_INTERVAL = 50, INIT_W = 1000, INIT_H = 800; //init_w once 1000, init_h once 800
+	public static final int DELAY_INTERVAL = 50, INIT_W = 1000, INIT_H = 500; //init_w once 1000, init_h once 800
 	private JFrame frame = new JFrame("Klondike");
 	private JPanel panel;
 	private final Dimension DIM = new Dimension(INIT_W,INIT_H);
