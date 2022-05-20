@@ -40,12 +40,13 @@ public class GameBoard implements Drawable, Updateable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		/* int check = 0;
+		int check = 0;
 		do { 
 			dealDeck();
 			check = checkRoyal();
-		while(check != -1);
-			
+		} while(check != -1);
+
+		/*	
 		bid = bid();
 		switchCenter(playerList.get(napolean), middle);
 
