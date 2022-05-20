@@ -37,13 +37,13 @@ public class GameBoard implements Drawable, Updateable {
 		playerList.add(four);
 		playerList.add(five);
 		try {
-			testImage = ImageIO.read(new File("images/cards/dj.png"));
+			testImage = ImageIO.read(new File("images/cards/joker.png"));
 			backImage = ImageIO.read(new File("images/cards/b1fv.png"));
-			napoleanLogo = ImageIO.read(new File("images/napolean_logo.png"));
+			// napoleanLogo = ImageIO.read(new File("images/napolean_logo.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		int check = 0;
+		/* int check = 0;
 		do { 
 			dealDeck();
 			check = checkRoyal();
@@ -96,6 +96,12 @@ public class GameBoard implements Drawable, Updateable {
 		g.drawImage(testImage, 30, 80, null);
 		g.drawImage(backImage, 100, 80, null);
 		g.drawImage(backImage, 105, 100, null);
+		
+		one.draw(g);
+		two.draw(g);
+		three.draw(g);
+		four.draw(g);
+		five.draw(g);
 	}
 
 

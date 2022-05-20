@@ -1,7 +1,8 @@
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Player {
+public class Player implements Drawable{
 	Pile toPlay;// This is the Pile of Cards that I will play
   	private Pile capturedCards;// Pile of cards that I have won
 	private String name;// This player's name
@@ -57,6 +58,11 @@ public class Player {
 	// leave the method below alone
 	public int cardsLeft(){
 		return capturedCards.size()+toPlay.size();
+	}
+
+	@Override
+	public void draw(Graphics g) {
+		toPlay.draw(g);
 	}
 
    	

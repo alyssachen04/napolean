@@ -1,5 +1,6 @@
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
+import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.IOException;
 
@@ -9,20 +10,24 @@ import java.awt.*;
 import java.awt.Image;
 
 /** represents a playing card that can draw itself. */
-public class Card implements Drawable, Updateable, Comparable<Card> {
+public class Card implements Drawable, Updateable, Comparable<Card>, ImageObserver {
     // need some instance variables
       private int suit;
       private int value;
-      static private Image back;
+      static private Image back; 
       private Image front;
 
     
-        public Card(int suit, int value){ //constructor to make a card consists of its suit and value
+      public Card(int suit, int value){ //constructor to make a card consists of its suit and value
         this.suit = suit;
         this.value = value;
-        //this.back = getImage("/napolean/images/b1fv.png");
+        try {
+          back = ImageIO.read(new File("images/cards/b1fv.png"));
+        } catch (IOException e) {
+          e.printStackTrace();
         }
-        
+      }
+
       // add getters
       public String getSuit() { //if suit is a given case, return its string name
         switch (suit) {
@@ -53,13 +58,13 @@ public class Card implements Drawable, Updateable, Comparable<Card> {
         }
         s += this.value + ".png";
 
-        Image testImage, backImage;
+        Image testImage, frontImage;
         // open file then set to front //
         try {
           testImage = ImageIO.read(new File(s));
-          if (back == null ) { 
-            backImage = ImageIO.read(new File("images/cards/b1fv.png"));
-            back = backImage;
+          if (front == null ) { 
+            frontImage = ImageIO.read(new File(s));
+            front = frontImage;
           }
           return testImage; 
         } catch (IOException e) {
@@ -68,56 +73,62 @@ public class Card implements Drawable, Updateable, Comparable<Card> {
         }
         return null; 
       }
-            @Override
-            /** This method satisfies the Comparable interface which determines
-             * if this Object is smaller than, greater than or equal to the 
-             * specified Card c
-             * Formally, if this Card is smaller than c, a negative int is returned
-             *           if this Card is larger than c, a positive int is returned
-             *           if this Card is equal to c, zero is returned	*/
-            public int compareTo(Card c){
-            int answer = 0;
-            if (value > c.getValue()) {
-              answer = 1;
-            }
-            else if (value < c.getValue()) {
-              answer = -1;
-            }
-            return answer;
-            }
+      
+      @Override
+      /** This method satisfies the Comparable interface which determines
+       * if this Object is smaller than, greater than or equal to the 
+       * specified Card c
+       * Formally, if this Card is smaller than c, a negative int is returned
+       *           if this Card is larger than c, a positive int is returned
+       *           if this Card is equal to c, zero is returned	*/
+      public int compareTo(Card c){
+        int answer = 0;
+        if (value > c.getValue()) {
+          answer = 1;
+        }
+        else if (value < c.getValue()) {
+          answer = -1;
+        }
+        return answer;
+      }
             
-            @Override
-            public String toString(){
-                String s = "";
-            if (value < 11) {
-              s += value;
-            }
-            else if (value == 11) {
-              s += "Jack";
-            }
-            else if (value == 12) {
-              s += "Queen";
-            }
-            else if (value == 13) {
-              s += "King";
-            }
-            else if (value == 14) {
-              s += "Ace";
-            }
-            s += " of ";
-            s += this.getSuit();
-                return s;
-            }
+      @Override
+      public String toString(){
+        String s = "";
+        if (value < 11) {
+          s += value;
+        }
+        else if (value == 11) {
+          s += "Jack";
+        }
+        else if (value == 12) {
+          s += "Queen";
+        }
+        else if (value == 13) {
+          s += "King";
+        }
+        else if (value == 14) {
+          s += "Ace";
+        }
+        s += " of ";
+        s += this.getSuit();
+        return s;
+      }
 
-        @Override
-        public void update(ActionEvent a) {
+      @Override
+      public void update(ActionEvent a) {
             // TODO Auto-generated method stub
             
-        }
+      }
 
-        @Override
-        public void draw(Graphics g) {
-            // TODO Auto-generated method stub
-            
-        }
+      @Override
+      public void draw(Graphics g) {
+        g.drawImage(front, 100, 100, this);     
+      }
+
+      @Override
+      public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
+        // TODO Auto-generated method stub
+        return false;
+      }
 }

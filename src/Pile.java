@@ -126,7 +126,9 @@ public class Pile implements Drawable, Updateable{
 
   @Override
   public void draw(Graphics g) {
-    // TODO Auto-generated method stub
+    for (Card p : pile) {
+      p.draw(g);
+    }
     
   }
 }
