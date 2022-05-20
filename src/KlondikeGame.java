@@ -8,6 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+
 /** for simplicity's sake i'm keeping it as Klondike Game but it's Napolean */
 public class KlondikeGame {
 	//#region vars
@@ -19,7 +20,6 @@ public class KlondikeGame {
 	private JPanel panel;
 	private final Dimension DIM = new Dimension(INIT_W,INIT_H);
 	private GameBoard board = new GameBoard();
-	private ImageIcon logo = new ImageIcon(); // draw image????
 	
 	private Timer timer = new Timer(DELAY_INTERVAL, null);
 	//#endregion vars
@@ -36,7 +36,6 @@ public class KlondikeGame {
 				board.draw(g);
 			}
 		};
-		napolean_logo.drawImage();
 		panel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent me) {
