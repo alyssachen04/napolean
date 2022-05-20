@@ -4,6 +4,7 @@ import java.awt.event.*;
 import java.io.File;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -13,11 +14,13 @@ public class KlondikeGame {
 	public static final int width = 50;
 	public static final int height = 78;
 	public static final double gap = width*0.4; //20 in this case
-	public static final int DELAY_INTERVAL = 50, INIT_W = 1000, INIT_H = 800; //init_w once 1000, init_h once 800
+	public static final int DELAY_INTERVAL = 50, INIT_W = 1000, INIT_H = 500; //init_w once 1000, init_h once 800
 	private JFrame frame = new JFrame("Klondike");
 	private JPanel panel;
 	private final Dimension DIM = new Dimension(INIT_W,INIT_H);
 	private GameBoard board = new GameBoard();
+	private ImageIcon logo = new ImageIcon(); // draw image????
+	
 	private Timer timer = new Timer(DELAY_INTERVAL, null);
 	//#endregion vars
 	
@@ -33,6 +36,7 @@ public class KlondikeGame {
 				board.draw(g);
 			}
 		};
+		napolean_logo.drawImage();
 		panel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent me) {
