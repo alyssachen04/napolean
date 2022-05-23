@@ -17,11 +17,11 @@ public class GameBoard implements Drawable, Updateable {
 
 	// private int numdraws = 0;
 	private Deck deck = new Deck();
-	private Player one = new Player("Sahana");
-	private Player two = new Player("Alyssa");
-	private Player three = new Player("Sarah");
-	private Player four = new Player("Mr. Hanson");
-	private Player five = new Player("McKenna");	
+	private Player one = new Player("Sahana", 12, 15);
+	private Player two = new Player("Alyssa", 100, 10);
+	private Player three = new Player("Sarah", 150, 10);
+	private Player four = new Player("Mr. Hanson", 200, 10);
+	private Player five = new Player("McKenna", 250, 10);	
 	private Pile middle = new Pile();
 	public ArrayList <Player> playerList = new ArrayList <> ();
 	private int bid = 0; // number napoleon + secretary need to win; compare NAPOLEON.captured + SECRETARY.captured to this later to figure out who wins 
@@ -37,7 +37,7 @@ public class GameBoard implements Drawable, Updateable {
 		playerList.add(four);
 		playerList.add(five);
 		try {
-			testImage = ImageIO.read(new File("images/cards/joker.png"));
+			testImage = ImageIO.read(new File("images/cards/joker15.png"));
 			backImage = ImageIO.read(new File("images/cards/b1fv.png"));
 			// napoleanLogo = ImageIO.read(new File("images/napolean_logo.png"));
 		} catch (IOException e) {
@@ -121,6 +121,7 @@ public class GameBoard implements Drawable, Updateable {
 		ArrayList<Card> round = new ArrayList<>();
 		// put cards in
 		// ask every player for a card & then add card to round
+		// if (3, )
 
 		int a = highestCard(round);
 		return a;
@@ -239,7 +240,7 @@ public class GameBoard implements Drawable, Updateable {
 	// this update will be called each time the timer in the KlondikeGame
 	// goes off.  This will be convenient for animating.
 	public void update(ActionEvent a) {
-		
+
 		
 	}
 

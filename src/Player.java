@@ -6,10 +6,10 @@ public class Player implements Drawable{
 	Pile toPlay;// This is the Pile of Cards that I will play
   	private Pile capturedCards;// Pile of cards that I have won
 	private String name;// This player's name
-
-	public Player(String s){
+	
+	public Player(String s, int x, int y){
     	this.name = s;
-		toPlay = new Pile(); // player's cards
+		toPlay = new Pile(x, y); // player's cards
 		capturedCards = new Pile(); // royalties captured
 	}
 
