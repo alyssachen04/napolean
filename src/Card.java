@@ -16,13 +16,13 @@ public class Card implements Drawable, Updateable, Comparable<Card>, ImageObserv
       private int value;
       static private Image back; 
       private Image front;
-
-    
+      
       public Card(int suit, int value){ //constructor to make a card consists of its suit and value
         this.suit = suit;
         this.value = value;
         try {
           back = ImageIO.read(new File("images/cards/b1fv.png"));
+          cardImage();
         } catch (IOException e) {
           e.printStackTrace();
         }
@@ -53,8 +53,9 @@ public class Card implements Drawable, Updateable, Comparable<Card>, ImageObserv
                 break;
           case 2: s += "d";
                 break;
-          default: s += "s";
+          case 3: s += "s";
                 break;
+          default: s += "joker";
         }
         
         s += this.value + ".png";
