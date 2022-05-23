@@ -84,6 +84,7 @@ public class Pile implements Drawable, Updateable{
     Card c = null;
     if (pile.size() > 0) {
       c = pile.remove(0);
+      System.out.println(pile);//reprints pile to see if we removed the first 22
     }
     return c;
 	}

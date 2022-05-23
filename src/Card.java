@@ -56,6 +56,7 @@ public class Card implements Drawable, Updateable, Comparable<Card>, ImageObserv
           default: s += "s";
                 break;
         }
+        
         s += this.value + ".png";
 
         Image testImage, frontImage;
