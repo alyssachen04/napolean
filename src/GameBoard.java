@@ -117,8 +117,23 @@ public class GameBoard implements Drawable, Updateable {
 		System.out.println("You just clicked "+p);
 	}
 	
-	public void round() {
-		
+	public int round() {
+		ArrayList<Card> round = new ArrayList<>();
+		// put cards in
+		// ask every player for a card & then add card to round
+
+		int a = highestCard(round);
+		return a;
+	}
+
+	private int highestCard(ArrayList<Card> round) {
+		int a = 0;
+		for (int i = 1; i < round.size(); i++) {
+			if (round.get(i).compareTo(round.get(a)) == 1 ){
+				a = i; //round.get(i);
+			}
+		}
+		return a;
 	}
 
 	public void dealDeck() {

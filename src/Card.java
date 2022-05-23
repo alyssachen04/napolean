@@ -123,7 +123,7 @@ public class Card implements Drawable, Updateable, Comparable<Card>, ImageObserv
 
       @Override
       public void draw(Graphics g) {
-        g.drawImage(front, 100, 100, this);     
+        g.drawImage(front, 100, 100, this);
       }
 
       @Override
