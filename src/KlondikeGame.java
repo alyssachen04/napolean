@@ -32,7 +32,7 @@ public class KlondikeGame {
 			@Override 
 			public void paintComponent(Graphics g) {
 				super.paintComponent(g);
-				System.out.println("look at the new view!!");
+				// System.out.println("look at the new view!!");
 				board.draw(g);
 			}
 		};
@@ -58,7 +58,7 @@ public class KlondikeGame {
 
 	protected void clickedAt(MouseEvent me) {
 		board.justClicked(me);
-		System.out.println("mouse was clicked");
+		//System.out.println("mouse was clicked");
 		panel.repaint();
 	}
 

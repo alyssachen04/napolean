@@ -17,12 +17,12 @@ public class GameBoard implements Drawable, Updateable {
 
 	// private int numdraws = 0;
 	private Deck deck = new Deck();
-	private Player one = new Player("Sahana", 12, 15);
+	private Player one = new Player("Sahana", 50, 10);
 	private Player two = new Player("Alyssa", 100, 10);
 	private Player three = new Player("Sarah", 150, 10);
 	private Player four = new Player("Mr. Hanson", 200, 10);
 	private Player five = new Player("McKenna", 250, 10);	
-	private Pile middle = new Pile();
+	private Pile middle = new Pile(500, 10);
 	public ArrayList <Player> playerList = new ArrayList <> ();
 	private int bid = 0; // number napoleon + secretary need to win; compare NAPOLEON.captured + SECRETARY.captured to this later to figure out who wins 
 	private int napolean = 0; 
@@ -107,6 +107,8 @@ public class GameBoard implements Drawable, Updateable {
 		three.draw(g);
 		four.draw(g);
 		five.draw(g);
+
+		middle.draw(g);
 	}
 
 

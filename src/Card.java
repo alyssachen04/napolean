@@ -33,7 +33,7 @@ public class Card implements Drawable, Updateable, Comparable<Card>, ImageObserv
       public void setLocation(int x, int y) {
         this.x = x;
         this.y = y;
-        System.out.println("Just set loc! "+this);
+        // System.out.println("Just set loc! "+this);
       }
 
       // add getters
