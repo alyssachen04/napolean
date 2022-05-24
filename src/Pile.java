@@ -12,13 +12,18 @@ import java.util.*;
 
 public class Pile implements Drawable, Updateable{
   
-  private ArrayList<Card> pile = new ArrayList<>();
+  public ArrayList<Card> pile = new ArrayList<>();
   private int x;
   private int y;
 
   public Pile(int x, int y) {
     this.x = x;
     this.y = y;
+
+    for (Card c : pile) {
+      c.setLocation(x, y);
+      y = y+10;
+    }
   }
 
   public Pile() {
@@ -34,6 +39,9 @@ public class Pile implements Drawable, Updateable{
     pile.clear();
   }
 
+  public String getPile() {
+    return this.toString();
+  }
   public Card getCard(int x){
     if(pile.size()!=0){
       return pile.get(x);
@@ -99,7 +107,13 @@ public class Pile implements Drawable, Updateable{
   }
   
 	public void add(Card c) {
+    int x = this.x, y = this.y;
     pile.add(c);
+    
+    
+    y = y+10*pile.size();
+    c.setLocation(x, y);
+    
 	}
 
   public void remove(int x) {

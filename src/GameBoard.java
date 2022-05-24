@@ -43,12 +43,17 @@ public class GameBoard implements Drawable, Updateable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		/* int check = 0;
+		
+		int testa = 0;
+		int check = 0;
 		do { 
+			deck.shuffle();
 			dealDeck();
 			check = checkRoyal();
+			testa++;
 		} while(check != -1);
 
+		System.out.print("Testa:" + testa);
 		/*	
 		bid = bid();
 		switchCenter(playerList.get(napolean), middle);
@@ -93,9 +98,9 @@ public class GameBoard implements Drawable, Updateable {
 		g.fillRect(0, 0, 3000, 2000);
 		
 		// this is just to test drawing a card
-		g.drawImage(testImage, 30, 80, null);
-		g.drawImage(backImage, 100, 80, null);
-		g.drawImage(backImage, 105, 100, null);
+		//g.drawImage(testImage, 30, 80, null);
+		//g.drawImage(backImage, 100, 80, null);
+		//g.drawImage(backImage, 105, 100, null);
 		
 		one.draw(g);
 		two.draw(g);
@@ -240,7 +245,6 @@ public class GameBoard implements Drawable, Updateable {
 	// this update will be called each time the timer in the KlondikeGame
 	// goes off.  This will be convenient for animating.
 	public void update(ActionEvent a) {
-
 		
 	}
 

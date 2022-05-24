@@ -23,7 +23,7 @@ public class Deck extends Pile{
     }
     Card j = new Card(5, 15); //add the joker to the deck
     add(j);
-  }
+    }
 
     @Override
     public void draw(Graphics g) {

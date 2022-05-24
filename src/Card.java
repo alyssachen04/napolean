@@ -14,6 +14,8 @@ public class Card implements Drawable, Updateable, Comparable<Card>, ImageObserv
     // need some instance variables
       private int suit;
       private int value;
+      private int x;
+      private int y; 
       static private Image back; 
       private Image front;
       
@@ -28,13 +30,19 @@ public class Card implements Drawable, Updateable, Comparable<Card>, ImageObserv
         }
       }
 
+      public void setLocation(int x, int y) {
+        this.x = x;
+        this.y = y;
+        System.out.println("Just set loc! "+this);
+      }
+
       // add getters
       public String getSuit() { //if suit is a given case, return its string name
         switch (suit) {
-          case 1: return "Diamonds";
-          case 2: return "Hearts"; 
-          case 3: return "Spades";
-          case 4: return "Clubs";
+          case 0: return "Diamonds";
+          case 1: return "Hearts"; 
+          case 2: return "Spades";
+          case 3: return "Clubs";
           default: return "Joker"; // j1; anything else is joker
         }
       }
@@ -47,13 +55,13 @@ public class Card implements Drawable, Updateable, Comparable<Card>, ImageObserv
       public Image cardImage() {
         String s = "images/cards/";
         switch (suit) {
-          case 0: s += "h";
+          case 1: s += "h";
                 break;
-          case 1: s += "c";
+          case 3: s += "c";
                 break;
-          case 2: s += "d";
+          case 0: s += "d";
                 break;
-          case 3: s += "s";
+          case 2: s += "s";
                 break;
           default: s += "joker";
         }
@@ -112,8 +120,12 @@ public class Card implements Drawable, Updateable, Comparable<Card>, ImageObserv
         else if (value == 14) {
           s += "Ace";
         }
+        else if (value == 15) {
+          return "Joker";
+        }
         s += " of ";
         s += this.getSuit();
+        s+=" x: "+x+" y: "+y;
         return s;
       }
 
@@ -125,7 +137,8 @@ public class Card implements Drawable, Updateable, Comparable<Card>, ImageObserv
 
       @Override
       public void draw(Graphics g) {
-        g.drawImage(front, 100, 100, this);
+        System.out.println(this);
+        g.drawImage(front, x, y, this);
       }
 
       @Override
