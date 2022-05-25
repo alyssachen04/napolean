@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 public class GameBoard implements Drawable, Updateable {
 
@@ -14,6 +15,7 @@ public class GameBoard implements Drawable, Updateable {
 	public static final int OFFSET_X = 40, OFFSET_Y = 40;
 	
 	Image napoleanLogo;
+	Image card1;
 
 	// private int numdraws = 0;
 	private Deck deck = new Deck();
@@ -39,13 +41,13 @@ public class GameBoard implements Drawable, Updateable {
 		try {
 			testImage = ImageIO.read(new File("images/cards/joker15.png"));
 			backImage = ImageIO.read(new File("images/cards/b1fv.png"));
-			// napoleanLogo = ImageIO.read(new File("images/napolean_logo.png"));
+			card1 = ImageIO.read(new File ("images/cards/card1.png"));
+			napoleanLogo = ImageIO.read(new File("images/napolean_logo.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		int testa = 0;
-		int check = 0;
+
+		/* int check = 0;
 		do { 
 			deck.shuffle();
 			dealDeck();
@@ -107,8 +109,13 @@ public class GameBoard implements Drawable, Updateable {
 		three.draw(g);
 		four.draw(g);
 		five.draw(g);
+<<<<<<< HEAD
 
 		middle.draw(g);
+=======
+		g.drawImage(card1, 300, 200, null);
+		g.drawImage(napoleanLogo, 300, 100, null);
+>>>>>>> 2fbd16a (changes)
 	}
 
 
