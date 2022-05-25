@@ -17,6 +17,10 @@ public class Player implements Drawable{
     	return name;
   	}
 
+	public void addToPlay(Card c){
+		toPlay.add(c);
+	}
+
 	public boolean increaseBid() {
 		System.out.println("Would you like to bid? Enter 0 for yes and 1 for no");
 		Scanner in = new Scanner(System.in);
