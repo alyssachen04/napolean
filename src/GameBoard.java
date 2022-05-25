@@ -110,7 +110,7 @@ public class GameBoard implements Drawable, Updateable {
 		four.draw(g);
 		five.draw(g);
 		// g.drawImage(card1, 300, 200, null);
-		g.drawImage(napoleanLogo, 300, 100, null);
+		g.drawImage(napoleanLogo, 800, 300, null);
 	}
 
 
