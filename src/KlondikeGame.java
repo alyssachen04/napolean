@@ -20,7 +20,7 @@ public class KlondikeGame {
 	private JPanel panel;
 	private final Dimension DIM = new Dimension(INIT_W,INIT_H);
 	private GameBoard board = new GameBoard();
-	private Timer timer = new Timer(DELAY_INTERVAL, null);
+	private Timer timer = new Timer(1000, null);
 	//#endregion vars
 	
 	public static void main(String[] args) {

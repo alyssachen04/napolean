@@ -111,7 +111,7 @@ public class Pile implements Drawable, Updateable{
     pile.add(c);
     
     
-    y = y+10*pile.size();
+    y = y+20*pile.size();
     c.setLocation(x, y);
     
 	}

@@ -24,7 +24,7 @@ public class GameBoard implements Drawable, Updateable {
 	private Player three = new Player("Sarah", 150, 10);
 	private Player four = new Player("Mr. Hanson", 200, 10);
 	private Player five = new Player("McKenna", 250, 10);	
-	private Pile middle = new Pile(500, 10);
+	private Pile middle = new Pile(450, 10);
 	public ArrayList <Player> playerList = new ArrayList <> ();
 	private int bid = 0; // number napoleon + secretary need to win; compare NAPOLEON.captured + SECRETARY.captured to this later to figure out who wins 
 	private int napolean = 0; 
@@ -47,20 +47,20 @@ public class GameBoard implements Drawable, Updateable {
 			e.printStackTrace();
 		}
 
-		/* int check = 0;
+		int check = 0;
 		do { 
 			deck.shuffle();
 			dealDeck();
 			check = checkRoyal();
-			testa++;
+			//testa++;
 		} while(check != -1);
 
-		System.out.print("Testa:" + testa);
-		/*	
-		bid = bid();
-		switchCenter(playerList.get(napolean), middle);
+		//System.out.print("Testa:" + testa);
+			
+		// bid = bid();
+		//switchCenter(playerList.get(napolean), middle);
 
-		for (int i = 0; i < 10; i++) {
+		/*for (int i = 0; i < 10; i++) {
 			// round();
 		}
 
@@ -109,6 +109,7 @@ public class GameBoard implements Drawable, Updateable {
 		three.draw(g);
 		four.draw(g);
 		five.draw(g);
+		middle.draw(g);
 		// g.drawImage(card1, 300, 200, null);
 		g.drawImage(napoleanLogo, 800, 300, null);
 	}
