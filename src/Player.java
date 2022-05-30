@@ -15,7 +15,7 @@ public class Player implements Drawable{
 
   	public String getName() {
     	return name;
-  	}
+
 
 	public void addToPlay(Card c){
 		toPlay.add(c);
