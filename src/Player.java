@@ -1,6 +1,8 @@
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.*;
+import java.awt.event.*;
 
 public class Player implements Drawable{
 	Pile toPlay;// This is the Pile of Cards that I will play
@@ -21,12 +23,12 @@ public class Player implements Drawable{
 		toPlay.add(c);
 	}
 
-	public boolean increaseBid() {
-		System.out.println("Would you like to bid? Enter 0 for yes and 1 for no");
-		Scanner in = new Scanner(System.in);
-        int a = in.nextInt();
-        System.out.println("You entered integer " + a);
-		if (a == 0) {
+	public boolean increaseBid(int player, int bid) {
+		JFrame f = new JFrame();
+		String s = "Player " + player + ", would you like to bid? Current bid is " + bid;
+		int a = JOptionPane.showConfirmDialog(f, s);
+
+		if (a == JOptionPane.YES_OPTION) {
 			return true;
 		}
 		return false;
