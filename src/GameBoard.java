@@ -60,7 +60,8 @@ public class GameBoard implements Drawable, Updateable {
 
 	public void playGame(){
 		bid = bid();
-		switchCenter(playerList.get(napolean), middle);
+		System.out.println(bid);
+		//switchCenter(playerList.get(napolean), middle);
 
 		/*for (int i = 0; i < 10; i++) {
 			// round();
@@ -127,8 +128,11 @@ public class GameBoard implements Drawable, Updateable {
 		Point p = me.getPoint();
 		System.out.println("You just clicked "+p);
 		for (Player a : playerList) {
+//			System.out.println("PLAYER A PLAYER A PLAYER A");
 			for (int i = 0; i < a.toPlay.size(); i++) {
+				// System.out.println("TO PLAY SIZE TO PLAY SIZE TO PLAYER SIZE");
 				if (a.toPlay.getCard(i).pointOnCard(p)) {
+					System.out.println("POINT ON CARD POINT ON CARD POINT ON CARD");
 					a.toPlay.getCard(i).setSelected();
 				}
 			}
@@ -240,7 +244,7 @@ public class GameBoard implements Drawable, Updateable {
 			if (fiveTrue) { 
 				fiveBid = one.increaseBid(5, currentBid); 
 				if (fiveBid) {
-					currentBid = currentBid++;
+					currentBid++;
 					winningPlayer = 5;
 				}
 				else {
@@ -249,7 +253,13 @@ public class GameBoard implements Drawable, Updateable {
 			}
 		}
 		napolean = winningPlayer;
+		if (winningPlayer == 0) {
+			JFrame f = new JFrame();
+			JOptionPane.showMessageDialog(f, "No bids, please rest");
+			System.exit(0);
+		}
 		System.out.println("Napolean is " + napolean);
+		napolean--;
 		return currentBid;
 	}
 
@@ -269,6 +279,9 @@ public class GameBoard implements Drawable, Updateable {
 		}
 		if (five) {
 			count++;
+		}
+		if (count == 0) {
+			return false;
 		}
 		return (count != 1);
 	}
