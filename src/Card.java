@@ -3,6 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.IOException;
+import java.lang.Object;
 
 import javax.imageio.ImageIO;
 
@@ -15,15 +16,23 @@ public class Card implements Drawable, Updateable, Comparable<Card>, ImageObserv
       private int suit;
       private int value;
       private int x;
-      private int y; 
+      private int y;
+      private int width;
+      private int height;
       static private Image back; 
       private Image front;
+      private Rectangle rectangle;
+      private boolean selected;
       
       public Card(int suit, int value){ //constructor to make a card consists of its suit and value
         this.suit = suit;
         this.value = value;
+        this.selected = false;
         try {
           back = ImageIO.read(new File("images/cards/b1fv.png"));
+          width = back.getWidth(null);
+          height = back.getHeight(null);
+          rectangle = new Rectangle(width, height);
           cardImage();
         } catch (IOException e) {
           e.printStackTrace();
@@ -34,6 +43,17 @@ public class Card implements Drawable, Updateable, Comparable<Card>, ImageObserv
         this.x = x;
         this.y = y;
         // System.out.println("Just set loc! "+this);
+      }
+
+      public void setSelected() {
+        selected = true; 
+      }
+
+      public boolean pointOnCard(int x, int y) {
+        if (rectangle.contains(x, y)) {
+          return true;
+        }
+        return false;
       }
 
       // add getters
@@ -139,6 +159,12 @@ public class Card implements Drawable, Updateable, Comparable<Card>, ImageObserv
       public void draw(Graphics g) {
         System.out.println(this);
         g.drawImage(front, x, y, this);
+        if (selected) 
+        { 
+          Graphics2D g2 = (Graphics2D) g;
+          g2.setColor(Color.YELLOW);
+          g2.drawRect(x, y, width, height);
+        }
       }
 
       @Override
