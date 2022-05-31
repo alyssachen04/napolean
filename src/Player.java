@@ -4,7 +4,7 @@ import java.util.Scanner;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class Player implements Drawable{
+public class Player implements Drawable {
 	Pile toPlay;// This is the Pile of Cards that I will play
   	private Pile capturedCards;// Pile of cards that I have won
 	private String name;// This player's name
@@ -17,7 +17,7 @@ public class Player implements Drawable{
 
   	public String getName() {
     	return name;
-
+	}
 
 	public void addToPlay(Card c){
 		toPlay.add(c);

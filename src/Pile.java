@@ -20,10 +20,10 @@ public class Pile implements Drawable, Updateable{
     this.x = x;
     this.y = y;
 
-    for (Card c : pile) {
+    /*for (Card c : pile) {
       c.setLocation(x, y);
       y = y+10;
-    }
+    }*/
   }
 
   public Pile() {

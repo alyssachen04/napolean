@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 public class GameBoard implements Drawable, Updateable {
 
@@ -20,11 +20,11 @@ public class GameBoard implements Drawable, Updateable {
 	// private int numdraws = 0;
 	private Deck deck = new Deck();
 	private Player one = new Player("Sahana", 50, 10);
-	private Player two = new Player("Alyssa", 100, 10);
-	private Player three = new Player("Sarah", 150, 10);
-	private Player four = new Player("Mr. Hanson", 200, 10);
-	private Player five = new Player("McKenna", 250, 10);	
-	private Pile middle = new Pile(450, 10);
+	private Player two = new Player("Alyssa", 135, 10);
+	private Player three = new Player("Sarah", 215, 10);
+	private Player four = new Player("Mr. Hanson", 295, 10);
+	private Player five = new Player("McKenna", 375, 10);	
+	private Pile middle = new Pile(500, 10);
 	public ArrayList <Player> playerList = new ArrayList <> ();
 	private int bid = 0; // number napoleon + secretary need to win; compare NAPOLEON.captured + SECRETARY.captured to this later to figure out who wins 
 	private int napolean = 0; 
@@ -47,6 +47,7 @@ public class GameBoard implements Drawable, Updateable {
 			e.printStackTrace();
 		}
 
+		//int testa = 0;
 		int check = 0;
 		do { 
 			deck.shuffle();
@@ -54,18 +55,18 @@ public class GameBoard implements Drawable, Updateable {
 			check = checkRoyal();
 			//testa++;
 		} while(check != -1);
+		
+	}
 
-		//System.out.print("Testa:" + testa);
-			
-		// bid = bid();
-		//switchCenter(playerList.get(napolean), middle);
+	public void playGame(){
+		bid = bid();
+		switchCenter(playerList.get(napolean), middle);
 
 		/*for (int i = 0; i < 10; i++) {
 			// round();
 		}
 
 		//gameOver(); */
-		
 	}
 
 	public int checkRoyal(){
@@ -183,46 +184,65 @@ public class GameBoard implements Drawable, Updateable {
 		boolean threeTrue = true;
 		boolean fourTrue = true;
 		boolean fiveTrue = true;
+		boolean oneBid, twoBid, threeBid, fourBid, fiveBid;
 		int currentBid = 9;
 		int winningPlayer = 0;
 		while (currentBid < 16 && howManyTrue(oneTrue, twoTrue, threeTrue, fourTrue, fiveTrue)) {
 			if (oneTrue) { 
-				oneTrue = one.increaseBid(); 
-				if (oneTrue) {
-					currentBid = currentBid++;
+				oneBid = one.increaseBid(1, currentBid); 
+				//System.out.println("OneTrue is " + oneTrue);
+				if (oneBid) {
+					currentBid++;
+					//System.out.println("Player one current bid: " + currentBid);
 					winningPlayer = 1;
+				}
+				else {
+					oneTrue = false;
 				}
 			}
 			if (twoTrue) { 
-				twoTrue = one.increaseBid(); 
-				if (twoTrue) {
-					currentBid = currentBid++;
+				twoBid = one.increaseBid(2, currentBid); 
+				if (twoBid) {
+					currentBid++;
 					winningPlayer = 2;
+				}
+				else {
+					twoTrue = false;
 				}
 			}
 			if (threeTrue) { 
-				threeTrue = one.increaseBid(); 
-				if (threeTrue) {
-					currentBid = currentBid++;
+				threeBid = one.increaseBid(3, currentBid); 
+				if (threeBid) {
+					currentBid++;
 					winningPlayer = 3;
+				}
+				else {
+					threeTrue = false;
 				}
 			}
 			if (fourTrue) { 
-				fourTrue = one.increaseBid(); 
-				if (fourTrue) {
-					currentBid = currentBid++;
+				fourBid = one.increaseBid(4, currentBid); 
+				if (fourBid) {
+					currentBid++;
 					winningPlayer = 4;
+				}
+				else {
+					fourTrue = false;
 				}
 			}
 			if (fiveTrue) { 
-				fiveTrue = one.increaseBid(); 
-				if (fiveTrue) {
+				fiveBid = one.increaseBid(5, currentBid); 
+				if (fiveBid) {
 					currentBid = currentBid++;
 					winningPlayer = 5;
+				}
+				else {
+					fiveTrue = false;
 				}
 			}
 		}
 		napolean = winningPlayer;
+		System.out.println("Napolean is " + napolean);
 		return currentBid;
 	}
 

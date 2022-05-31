@@ -54,6 +54,7 @@ public class KlondikeGame {
 				panel.repaint();
 			}
 		});
+		board.playGame();
 	}
 
 	protected void clickedAt(MouseEvent me) {
