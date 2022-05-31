@@ -49,8 +49,8 @@ public class Card implements Drawable, Updateable, Comparable<Card>, ImageObserv
         selected = true; 
       }
 
-      public boolean pointOnCard(int x, int y) {
-        if (rectangle.contains(x, y)) {
+      public boolean pointOnCard(Point p) {
+        if (rectangle.contains(p.getX(), p.getY())) {
           return true;
         }
         return false;

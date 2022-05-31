@@ -126,6 +126,13 @@ public class GameBoard implements Drawable, Updateable {
 	public void justClicked(MouseEvent me) {
 		Point p = me.getPoint();
 		System.out.println("You just clicked "+p);
+		for (Player a : playerList) {
+			for (int i = 0; i < a.toPlay.size(); i++) {
+				if (a.toPlay.getCard(i).pointOnCard(p)) {
+					a.toPlay.getCard(i).setSelected();
+				}
+			}
+		}
 	}
 	
 	public int round() {
