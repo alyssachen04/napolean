@@ -73,19 +73,19 @@ public class GameBoard implements Drawable, Updateable {
 	public int checkRoyal(){
 		for(int i = 0; i < playerList.size(); i++){
 			int count = 0;
-			for(int x = 0; x < playerList.get(i).toPlay.size(); x++){
-				if(playerList.get(i).toPlay.getCard(x).getValue() >= 11){
+			for(int x = 0; x < playerList.get(i).getToPlay().size(); x++){
+				if(playerList.get(i).getToPlay().getCard(x).getValue() >= 11){
 					count++;
 					break;
 				}
 			}
 			if(count == 0){
 				deck = new Deck();
-				one.toPlay.clear();
-				two.toPlay.clear();
-				three.toPlay.clear();
-				four.toPlay.clear();
-				five.toPlay.clear();
+				one.getToPlay().clear();
+				two.getToPlay().clear();
+				three.getToPlay().clear();
+				four.getToPlay().clear();
+				five.getToPlay().clear();
 				return count;
 			}
 		}
@@ -127,13 +127,13 @@ public class GameBoard implements Drawable, Updateable {
 	public void justClicked(MouseEvent me) {
 		Point p = me.getPoint();
 		System.out.println("You just clicked "+p);
-		for (Player a : playerList) {
+		for (int a = 0; a < playerList.size(); a++) {
 //			System.out.println("PLAYER A PLAYER A PLAYER A");
-			for (int i = 0; i < a.toPlay.size(); i++) {
+			for (int i = 0; i < playerList.get(a).getToPlay().size(); i++) {
 				// System.out.println("TO PLAY SIZE TO PLAY SIZE TO PLAYER SIZE");
-				if (a.toPlay.getCard(i).pointOnCard(p)) {
+				if (playerList.get(a).getToPlay().getCard(i).pointOnCard(p)) {
 					System.out.println("POINT ON CARD POINT ON CARD POINT ON CARD");
-					a.toPlay.getCard(i).setSelected();
+					playerList.get(a).getToPlay().getCard(i).setSelected();
 				}
 			}
 		}
@@ -161,11 +161,11 @@ public class GameBoard implements Drawable, Updateable {
 
 	public void dealDeck() {
 		for (int i = 0; i < 10; i++) {
-			one.toPlay.add(deck.deal());
-			two.toPlay.add(deck.deal());
-			three.toPlay.add(deck.deal());
-			four.toPlay.add(deck.deal());
-			five.toPlay.add(deck.deal());
+			one.getToPlay().add(deck.deal());
+			two.getToPlay().add(deck.deal());
+			three.getToPlay().add(deck.deal());
+			four.getToPlay().add(deck.deal());
+			five.getToPlay().add(deck.deal());
 		}
 		middle.addPile(deck);
 	}
@@ -184,8 +184,8 @@ public class GameBoard implements Drawable, Updateable {
 		int swap = 0;
 		Card c = middle.getCard(pick);
 		middle.remove(pick);
-		Napoleon.toPlay.add(c);
-		Napoleon.toPlay.remove(swap);
+		Napoleon.getToPlay().add(c);
+		Napoleon.getToPlay().remove(swap);
 		middle.add(c);
 	}
 
